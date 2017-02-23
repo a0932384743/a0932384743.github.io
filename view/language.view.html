@@ -1,0 +1,58 @@
+<div class="row" ng-controller="userCtrl as userctrl">
+    <div class="col-xs-12">
+        <div class="bs-docs-section">
+            <h2 class="page-header text-info">
+				{{labctrl.computerSkill | i18n}}
+			</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                <a class="btn btn-xs" ng-click="userctrl.languagesortreverse = !userctrl.languagesortreverse ">
+									{{labctrl.language | i18n}}						
+									<span ng-show="userctrl.languagesortreverse">
+									  ▲
+									</span>
+									<span ng-show="!userctrl.languagesortreverse">
+									  ▼
+									</span>	
+								</a>
+                            </th>
+                            <th>
+                                <a class="btn btn-xs">
+									{{labctrl.listen | i18n}}
+								</a>
+                            </th>
+                            <th>
+                                <a class="btn btn-xs">
+									{{labctrl.speak | i18n}}
+								</a>
+                            </th>
+                            <th>
+                                <a class="btn btn-xs">
+									{{labctrl.read | i18n}}
+								</a>
+                            </th>
+                            <th>
+                                <a class="btn btn-xs">
+									{{labctrl.write | i18n}}
+								</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="languageskill in userctrl.user.languageskill | orderBy:'language':userctrl.languagesortreverse">
+                            <td>{{languageskill.language}}</td>
+                            <td>{{languageskill.listen}}</td>
+                            <td>{{languageskill.speak}}</td>
+                            <td>{{languageskill.read}}</td>
+                            <td>{{languageskill.write}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.blog-post -->
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="row" ng-controller="userCtrl as userctrl">
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header text-info">
+				{{labctrl.language | i18n}}
+			</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<a class="btn btn-xs"  ng-click="userctrl.participationprogramreverse = !userctrl.participationprogramreverse ">
+									{{labctrl.language | i18n}}						
+									<span ng-show="userctrl.participationprogramreverse">
+									  ▲
+									</span>
+									<span ng-show="!userctrl.participationprogramreverse">
+									  ▼
+									</span>	
+								</a>	
+							</th>
+							<th>
+								<a class="btn btn-xs">
+									{{labctrl.schoolStarttime | i18n}}
+								</a>	
+							</th>
+							<th>
+								<a class="btn btn-xs">
+									{{labctrl.schoolEndtime | i18n}}
+								</a>	
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="participationprogram in userctrl.user.participationprogram | orderBy:'name':userctrl.participationprogramreverse">
+							<td>{{participationprogram.name}}</td>
+							<td>{{participationprogram.starttime.format('YYYY-MM-DD')}}</td>
+							<td>{{participationprogram.endtime.format('YYYY-MM-DD')}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /.blog-post -->
+
+	</div><!-- /.blog-main -->
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								{{labctrl.content | i18n}}						
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="participationactive in userctrl.user.participationactive">
+							<td>{{participationactive}}</td>
+						</tr>
+						<tr ng-repeat="journal in userctrl.user.journal">
+							<td>{{journal}}</td>
+						</tr>
+						<tr ng-repeat="conferences in userctrl.user.conferences">
+							<td>{{conferences}}</td>
+						</tr>
+						<tr ng-repeat="seminar in userctrl.user.seminar">
+							<td>{{seminar}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /.blog-post -->
+	</div><!-- /.blog-ma -->
+
+</div>

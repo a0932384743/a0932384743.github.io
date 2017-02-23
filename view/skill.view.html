@@ -1,0 +1,114 @@
+<div class="row" ng-controller="userCtrl as userctrl">
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header text-info">
+				{{labctrl.programminglanguage | i18n}}
+			</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<a class="btn btn-xs"  ng-click="userctrl.programminglanguagesortreverse = !userctrl.programminglanguagesortreverse ">
+									{{labctrl.language | i18n}}						
+									<span ng-show="userctrl.programminglanguagesortreverse">
+									  ▲
+									</span>
+									<span ng-show="!userctrl.programminglanguagesortreverse">
+									  ▼
+									</span>	
+								</a>	
+							</th>
+							<th>
+								<a class="btn btn-xs">
+									{{labctrl.content | i18n}}
+								</a>	
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="programminglanguage in userctrl.user.computerskill.programminglanguage | orderBy:'name':userctrl.programminglanguagesortreverse">
+							<td>{{programminglanguage.name}}</td>
+							<td>{{programminglanguage.content}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /.blog-post -->
+
+	</div><!-- /.blog-main -->
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header text-info">
+				{{labctrl.tool | i18n}}
+			</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<a class="btn btn-xs"  ng-click="userctrl.toolskillreverse = !userctrl.toolskillreverse ">
+									{{labctrl.tool | i18n}}						
+									<span ng-show="userctrl.toolskillreverse">
+									  ▲
+									</span>
+									<span ng-show="!userctrl.toolskillreverse">
+									  ▼
+									</span>	
+								</a>	
+							</th>
+							<th>
+								<a class="btn btn-xs">
+									{{labctrl.content | i18n}}
+								</a>	
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="toolskill in userctrl.user.computerskill.toolskill | orderBy:'name':userctrl.toolskillreverse">
+							<td>{{toolskill.name}}</td>
+							<td>{{toolskill.content}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /.blog-post -->
+	</div><!-- /.blog-ma -->
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header text-info">
+				{{labctrl.officeskill | i18n}}
+			</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<a class="btn btn-xs"  ng-click="userctrl.officeskillreverse = !userctrl.officeskillreverse ">
+									{{labctrl.officeskill | i18n}}						
+									<span ng-show="userctrl.officeskillreverse">
+									  ▲
+									</span>
+									<span ng-show="!userctrl.officeskillreverse">
+									  ▼
+									</span>	
+								</a>	
+							</th>
+							<th>
+								<a class="btn btn-xs">
+									{{labctrl.content | i18n}}
+								</a>	
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="officeskill in userctrl.user.computerskill.officeskill | orderBy:'name':userctrl.officeskillreverse">
+							<td>{{officeskill.name}}</td>
+							<td>{{officeskill.content}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /.blog-post -->
+	</div><!-- /.blog-ma
+</div>

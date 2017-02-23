@@ -1,0 +1,51 @@
+<div class="row">
+    <table class="table table-bordered text-center" ng-controller="userCtrl as userctrl" ng-model="isClick" ng-init="isClick = true">
+        <thead class="thead-default">
+            <tr>
+                <th colspan="2">
+					{{ labctrl.personalInfo | i18n }}
+					<a class="btn btn-xs pull-right" ng-click="isClick=!isClick">
+						<span ng-if="isClick">
+						  ▲
+						</span>
+						<span ng-if="!isClick">
+						  ▼
+						</span>				
+					</a>
+				</th>
+				
+            </tr>
+        </thead>
+        <tbody ng-if="isClick">
+            <tr>
+                <th class="text-center" colspan="2">
+                    <img ng-src="{{ userctrl.user.photo }}">
+                </th>
+            </tr>
+            <tr>
+                <th>{{ labctrl.name | i18n }}</th>
+                <td>{{ userctrl.user.username }}</td>
+            </tr>
+            <tr>
+                <th>{{ labctrl.sex | i18n }}</th>
+                <td>{{ userctrl.user.sex }}</td>
+            </tr>
+            <tr>
+                <th>{{ labctrl.age | i18n }}</th>
+                <td>{{ userctrl.user.age }}</td>
+            </tr>
+            <tr>
+                <th>{{ labctrl.birthday | i18n }}</th>
+                <td>{{ userctrl.user.birth.format('YYYY-MM-DD') }}</td>
+            </tr>
+            <tr>
+                <th>{{ labctrl.height | i18n }}</th>
+                <td>{{ userctrl.user.height }} cm</td>
+            </tr>
+            <tr>
+                <th>{{ labctrl.weight | i18n }}</th>
+                <td>{{ userctrl.user.weight }} kg</td>
+            </tr>
+		</tbody>
+    </table>
+</div>
