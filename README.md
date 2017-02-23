@@ -1,4 +1,4 @@
-## Welcome to MY RESUMe
+## Welcome to MY Resume
 
     Hello, my name is Jr-Wei Chen, 
 
