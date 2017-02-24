@@ -85,7 +85,7 @@
 						<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
 					</span>
 				</th>
-                <td><a>{{ userctrl.user.mail }}</a></td>
+                <td><a href="mailto:{{userctrl.user.mail}}">{{ userctrl.user.mail }}</a></td>
             </tr>
 			<tr>
 				<th>
@@ -94,7 +94,7 @@
 						G
 					</span>
 				</th>
-                <td><a>{{ userctrl.user.github }}</a></td>
+                <td><a ng-href="{{userctrl.user.github}}" target="_blank">{{ userctrl.user.github }}</a></td>
             </tr>
 			<tr>
 				<th>
