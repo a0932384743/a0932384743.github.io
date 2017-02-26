@@ -7,10 +7,10 @@
 			</h2>
 			<ul class="timeline">
 				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="education in userctrl.user.education">
-					<div class="timeline-badge">
+					<div class="timeline-badge {{labctrl.colors[ $index%5]}}" ng-click="education.active = !education.active">
 						<i class="glyphicon glyphicon-credit-card"></i>
 					</div>
-						<div class="timeline-panel">
+					<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'disactive' : education.active , 'active': !education.active}">
 							<div class="timeline-heading">
 								<h4 class="timeline-title">{{education.school}}</h4>
 							</div>

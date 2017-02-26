@@ -7,19 +7,35 @@
 			</h2>
 			<ul class="timeline">
 				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="employment in userctrl.user.employment">
-					<div class="timeline-badge">
+					<div class="timeline-badge {{labctrl.colors[ $index%5]}}" ng-click="employment.active = !employment.active">
 						<i class="glyphicon glyphicon-credit-card"></i>
 					</div>
-						<div class="timeline-panel">
+						<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'disactive' : employment.active , 'active': !employment.active}">
 							<div class="timeline-heading">
-								<h4 class="timeline-title">{{employment.employer}}</h4>
+								<h4 class="timeline-title">{{employment.employer}}
+									<i class="fa fa-external-link-square btn btn-xs pull-right" aria-hidden="true" ng-click="employment.show = !employment.show"></i>
+								</h4>
+								<p>{{employment.jobtitle}}</p>
 							</div>
 						<div class="timeline-body">
-							<h5>{{employment.jobtitle}}</h5>
-							<div class="alert alert-dismissible">
-								{{employment.content}}
+							<div class="alert alert-dismissible" ng-class="{'fadein' : !employment.show , 'fadeout' : employment.show}">
+								<cite title="Source Title">{{employment.content}}</cite>
 							</div>
-							<p>{{employment.starttime.format('YYYY-MM-DD') +  ' ~ ' + employment.endtime.format('YYYY-MM-DD')}}</p>
+							<div class="alert alert-dismissible" ng-class="{'fadein' : employment.show , 'fadeout' : !employment.show}">
+								<h4>
+									<i class="fa fa-address-book-o" aria-hidden="true"></i>{{ labctrl.supervisor | i18n}}
+								</h4>
+								<blockquote>
+								  <p>{{employment.supervisor.name}}</p>
+								  <footer><cite title="Source Title">{{employment.supervisor.jobtitle}}</cite></footer>
+								</blockquote>
+								
+							</div>
+							<p>
+								<label>{{employment.starttime.format('YYYY-MM-DD')}} </label>
+								 ~ 
+								 <label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
+							</p>
 						</div>
 					</div>
 				</li>
