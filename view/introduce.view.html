@@ -1,5 +1,4 @@
 <div class="row" ng-controller="userCtrl as userctrl">
-
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
@@ -9,6 +8,86 @@
 				{{ userctrl.user.introduce }}
 			</p>
 		</div><!-- /.blog-post -->
-
+	</div><!-- /.blog-main -->
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header">
+				<strong>{{labctrl.personalInfo | i18n}}</strong>
+			</h2>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-3">
+					<img class="img-responsive" style="margin:5px auto" ng-src="{{ userctrl.user.photo }}">
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-9">
+					<table class="table table-noborder text-center">
+						<tbody>
+							<tr>
+								<th>
+									<span>{{ labctrl.name | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td>{{ userctrl.user.username }}</td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.sex | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td>{{ userctrl.user.sex }}</td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.birthday | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td>{{ userctrl.user.birth.format('YYYY-MM-DD') }}</td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.height | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td>{{ userctrl.user.height }} cm</td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.weight | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td>{{ userctrl.user.weight }} kg</td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.email | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td><a href="mailto:{{userctrl.user.mail}}">{{ userctrl.user.mail }}</a></td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.github}}</span>
+								</th>
+								<td>:</td>
+								<td><a ng-href="{{userctrl.user.github}}" target="_blank">{{ userctrl.user.github }}</a></td>
+							</tr>
+							<tr>
+								<th>
+									<spa>{{ labctrl.telphone | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td><a ng-href="tel:{{userctrl.user.telphone}}">{{ userctrl.user.telphone }}</a></td>
+							</tr>
+							<tr>
+								<th>
+									<span>{{ labctrl.cellphone | i18n }}</span>
+								</th>
+								<td>:</td>
+								<td><a ng-href="tel:{{userctrl.user.cellphone}}">{{ userctrl.user.cellphone }}</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div><!-- /.blog-main -->
 </div>

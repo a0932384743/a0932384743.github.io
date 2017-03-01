@@ -1,5 +1,30 @@
 <div class="row" ng-controller="userCtrl as userctrl">
-
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header">
+				<strong>{{labctrl.education | i18n}}</strong>
+			</h2>
+			<ul class="timeline">
+				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="education in userctrl.user.education">
+					<div class="timeline-badge {{labctrl.colors[ $index%5]}}" ng-click="education.active = !education.active">
+						<i class="fa fa-graduation-cap"></i>
+					</div>
+					<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'animated flipOutX' : education.active , 'animated flipInX': !education.active}">
+							<div class="timeline-heading">
+								<h4 class="timeline-title">
+									{{education.school}}
+								</h4>
+								<p>{{education.subject}}</p>
+							</div>
+						<div class="timeline-body">
+							<span>{{education.endtime.format('YYYY-MM-DD')}}</span>
+							<span>{{education.status}}</span> 
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.blog-main -->
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
@@ -8,33 +33,32 @@
 			<ul class="timeline">
 				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="employment in userctrl.user.employment">
 					<div class="timeline-badge {{labctrl.colors[ $index%5]}}" ng-click="employment.active = !employment.active">
-						<i class="glyphicon glyphicon-credit-card"></i>
+						<i class="fa fa-suitcase"></i>
 					</div>
-						<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'disactive' : employment.active , 'active': !employment.active}">
-							<div class="timeline-heading">
-								<h4 class="timeline-title">{{employment.employer}}
-									<i class="fa fa-external-link-square btn btn-xs pull-right" aria-hidden="true" ng-click="employment.show = !employment.show"></i>
-								</h4>
-								<p>{{employment.jobtitle}}</p>
-							</div>
+					<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'animated flipInX' : !employment.active , 'animated flipOutX': employment.active}">
+						<div class="timeline-heading">
+							<h4 class="timeline-title">{{employment.employer}}</h4>
+							<p>{{employment.jobtitle}}</p>
+						</div>
 						<div class="timeline-body">
-							<div class="alert alert-dismissible" ng-class="{'fadein' : !employment.show , 'fadeout' : employment.show}">
-								<cite title="Source Title">{{employment.content}}</cite>
+							<div class="alert alert-dismissible" ng-if="!employment.show" ng-class="{'animated lightSpeedIn' : !employment.show , 'animated lightSpeedOut' : employment.show}">
+								<p>{{employment.content}}<p>
 							</div>
-							<div class="alert alert-dismissible" ng-class="{'fadein' : employment.show , 'fadeout' : !employment.show}">
-								<h4>
-									<i class="fa fa-address-book-o" aria-hidden="true"></i>{{ labctrl.supervisor | i18n}}
-								</h4>
-								<blockquote>
-								  <p>{{employment.supervisor.name}}</p>
-								  <footer><cite title="Source Title">{{employment.supervisor.jobtitle}}</cite></footer>
-								</blockquote>
-								
+							<div class="alert alert-dismissible" ng-if="employment.show" ng-class="{'animated lightSpeedIn' : employment.show , 'animated lightSpeedOut' : !employment.show}">
+								<address>
+									<div>
+										<img class="pull-left img-responsive img-circle" ng-src="{{employment.supervisor.photo}}">
+										<strong>{{employment.supervisor.name}}</strong>
+									</div>
+									<p>{{employment.supervisor.jobtitle}}</p>
+									<abbr href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</abbr>
+								</address>
 							</div>
 							<p>
 								<label>{{employment.starttime.format('YYYY-MM-DD')}} </label>
-								 ~ 
-								 <label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
+								~ 
+								<label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
+								<i class="fa fa-external-link-square btn btn-xs pull-right" aria-hidden="true" ng-click="employment.show = !employment.show"></i>
 							</p>
 						</div>
 					</div>
