@@ -2,34 +2,74 @@
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.programminglanguage | i18n}}</strong>
+				<strong>{{labctrl.experts | i18n}}</strong>
 			</h2>
-			<div class="row" ng-repeat="programminglanguage in userctrl.user.computerskill.programminglanguage | orderBy:'name':userctrl.programminglanguagesortreverse">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3"><h4 class="text-info"><strong>{{programminglanguage.name}}</strong></h4></div>
-				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9"><p>{{programminglanguage.content}}</p></div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4" ng-repeat="experts in userctrl.user.experts">
+					<img ng-src="{{experts.icon}}" class="img-responsive img-circle rotateIn animated" style="margin:auto">
+					<h3 class="text-center text-info"><strong>{{experts.name}}</strong></h3>
+					<em class="zoomIn animated">{{experts.content}}</em>
+				</div>
 			</div>
 		</div><!-- /.blog-post -->
-
 	</div><!-- /.blog-main -->
+
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header">
+				<strong>{{labctrl.programminglanguage | i18n}}</strong>
+			</h2>
+			<div class="row" ng-repeat="programminglanguage in userctrl.user.computerskill.programminglanguage">
+				<div class="col-xs-12 col-sm-4 col-md-4"><h5 class="text-info"><strong>{{programminglanguage.name + ' '}}</strong>({{programminglanguage.years+' '}}{{labctrl.year | i18n }})</h5></div>
+				<div class="col-xs-12 col-sm-8 col-md-8">
+					<div class="progress">
+					  <div class="progress-bar  animated slideInLeft progress-bar-{{labctrl.colors[$index%5]}}" role="progressbar" aria-valuenow="{{programminglanguage.value}}" aria-valuemin="0" aria-valuemax="100" style="width:{{programminglanguage.value}}%">
+						{{programminglanguage.value}}%
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<div class="bs-docs-section">
+			<h2 class="page-header">
+				<strong>{{labctrl.kits | i18n}}</strong>
+			</h2>
+			<div class="bs-component">
+				<label class="label label-{{labctrl.colors[$index%5]}}" ng-repeat="kits in userctrl.user.computerskill.kits" style="line-height: 1.5em; margin:5px; font-size: large;">
+					{{kits.name}}
+				</label>
+			</div>
+		</div>
+	</div>
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
 				<strong>{{labctrl.tool | i18n}}</strong>
 			</h2>
-			<div class="row" ng-repeat="toolskill in userctrl.user.computerskill.toolskill | orderBy:'name':userctrl.toolskillreverse">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3"><h4 class="text-info"><strong>{{toolskill.name}}</strong></h4></div>
-				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9"><p>{{toolskill.content}}</p></div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="toolskill in userctrl.user.computerskill.toolskill">
+					<img ng-src="{{toolskill.icon}}" class="img-responsive img-circle rotateIn animated" style="margin:auto">
+					<h3 class="text-center text-info"><i class="fa fa-check-circle text-success fadeInLeft animated" style="margin:auto 2px;"></i><strong>{{toolskill.name}}</strong></h3>
+				</div>
 			</div>
-		</div><!-- /.blog-post -->
-	</div><!-- /.blog-ma -->
+		</div>
+	</div>
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.officeskill | i18n}}</strong>
+				<strong>{{labctrl.other | i18n}}</strong>
 			</h2>
-			<div class="row"  ng-repeat="officeskill in userctrl.user.computerskill.officeskill | orderBy:'name':userctrl.officeskillreverse">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3"><h4 class="text-info"><strong>{{officeskill.name}}</strong></h4></div>
-				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9"><p>{{officeskill.content}}</p></div>
+			<div class="row" ng-controller="skillLangController as skilllangctrl">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="text-info text-center"><strong>{{labctrl.officeskill | i18n}}</strong></div>
+					<canvas class="chart chart-radar" chart-data="userctrl.user.computerskill.officeskill.series.datas"  chart-options="skilllangctrl.options" chart-labels="userctrl.user.computerskill.officeskill.labels"></canvas> 
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="text-info text-center"><strong>{{labctrl.language | i18n}}</strong></div>
+					<canvas class="chart chart-radar" chart-data="skilllangctrl.languageskill.series.datas" chart-options="skilllangctrl.options" chart-series="skilllangctrl.languageskill.series.labels" chart-labels="skilllangctrl.languageskill.labels"></canvas> 
+				</div>
 			</div>
 		</div><!-- /.blog-post -->
 	</div><!-- /.blog-ma

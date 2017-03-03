@@ -7,6 +7,7 @@
 	"langen":"英文",
 	"langjp":"日文",
 	"name" : "姓名",
+	"year"	   : "年",
 	"age"	   : "年齡",
 	"height"   : "身高",
 	"weight"   : "體重",
@@ -59,5 +60,7 @@
 	"skill":"技能",
 	"officeskill":"文書技能",
 	"related.activities" : "相關活動",
-	"other" : "其他"
+	"other" : "其他",
+	"kits"  : "使用過的套件",
+	"experts" : "專長"
 }

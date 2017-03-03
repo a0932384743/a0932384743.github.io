@@ -7,6 +7,7 @@
 	"langen":"English",
 	"langjp":"Japan",
 	"name" : "Name",
+	"year"	   : "years",
 	"age"	   : "Age",
 	"height"   : "Height",
 	"weight"   : "Weight",
@@ -61,5 +62,7 @@
 	"skill":"Skill",
 	"officeskill":"Office Skill",
 	"related.activities" : "Related Activities",
-	"other" : "Other"
+	"other" : "Other",
+	"kits" : "What I know",
+	"experts" : "What can I do"
 }
