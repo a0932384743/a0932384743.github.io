@@ -1,30 +1,27 @@
-<div class="row" ng-controller="userCtrl as userctrl">
+<div class="row" ng-controller="worksCtrl as worksctrl">
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
 				<strong>{{labctrl.works | i18n}}</strong>
 			</h2>
-			<div class="blog_block">
+			<div class="blog_block" ng-repeat="works in worksctrl.works">
 				<div class="row">
 					<div class="col-md-4">
 						<div class="blog_img">
-							<img class="img img-responsive" src="http://mr-lancer-angular.phoenixcoded.com/mrlancer/assets/images/blog1.jpg" alt="Blogs">
+							<img class="img img-responsive" style="max-height:300px;margin:auto;" ng-src="{{works.image}}">
 						</div>
 					</div>
 					<div class="col-md-8">
 						<h4 class="text-info text-uppercase">
-							<strong>No one should ever have left the oceans</strong>
+							<strong>{{works.title}}</strong>
 						</h4>
 						<p>
-							Assertively cultivate professional interfaces without synergistic etwor s.Quickly erage existing customized ideas through client- based eliver ables. Compellingly unleash fully tested outsourcing with prospective tunities. Uniquely maximize client-centric tals rather than focused web-readiness..
+							{{works.abstracts}}
 						</p>
-						<a class="btn btn-primary text-uppercase" ui-sref="works.detail({ 
-							title:'Mytitle'
-						})">Read More</a>
+						<a class="btn btn-primary text-uppercase">Read More</a>
 					</div>
 				</div>
 			</div>
 		</div><!-- /.blog-post -->
 	</div><!-- /.blog-main -->
 </div>
-<div ui-view></div>
