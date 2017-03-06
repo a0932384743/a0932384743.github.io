@@ -45,20 +45,22 @@
 								<p>{{employment.content}}<p>
 							</div>
 							<div class="alert alert-dismissible" ng-if="employment.show" ng-class="{'animated lightSpeedIn' : employment.show , 'animated lightSpeedOut' : !employment.show}">
-								<address>
-									<div>
-										<img class="pull-left img-responsive img-circle" ng-src="{{employment.supervisor.photo}}">
-										<strong>{{employment.supervisor.name}}</strong>
-									</div>
-									<p>{{employment.supervisor.jobtitle}}</p>
-									<abbr href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</abbr>
-								</address>
+								<div>
+									<img class="pull-left img-responsive img-circle" ng-src="{{employment.supervisor.photo}}">
+									<strong>{{employment.supervisor.name}}</strong>
+								</div>
+								<p>{{employment.supervisor.jobtitle}}</p>
+								<div><a ng-href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</a></div>
+								<div><a ng-href="mailto:{{employment.supervisor.mail}}">{{employment.supervisor.mail}}</a></div>
 							</div>
 							<p>
 								<label>{{employment.starttime.format('YYYY-MM-DD')}} </label>
 								~ 
 								<label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
-								<i class="fa fa-external-link-square btn btn-xs pull-right" aria-hidden="true" ng-click="employment.show = !employment.show"></i>
+								<button class="btn btn-primary btn-xs pull-right" ng-click="employment.show = !employment.show">
+									<label ng-if="!employment.show">{{labctrl.supervisor | i18n}}</label>
+									<label ng-if="employment.show">{{labctrl.content | i18n}}</label>
+								</button>
 							</p>
 						</div>
 					</div>
