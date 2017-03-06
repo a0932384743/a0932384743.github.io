@@ -5,16 +5,16 @@
 				<strong>{{labctrl.relatedActivities | i18n}}</strong>
 			</h2>
 			<div class="bs-component">
-				<div class="alert alert-dismissible alert-warning slideInRight animated" ng-repeat="participationactive in userctrl.user.participationactive">
+				<div class="alert alert-dismissible alert-warning" ng-repeat="participationactive in userctrl.user.participationactive">
 					<i class="fa fa-tag" aria-hidden="true" style="margin:0 5px"></i><strong>{{participationactive}}</strong>
 				</div>
-				<div class="alert alert-dismissible  alert-danger slideInRight animated" ng-repeat="journal in userctrl.user.journal">
+				<div class="alert alert-dismissible  alert-danger" ng-repeat="journal in userctrl.user.journal">
 					<i class="fa fa-tag" aria-hidden="true" style="margin:0 5px"></i><strong>{{journal}}</strong>
 				</div>
-				<div class="alert alert-dismissible alert-success slideInRight animated" ng-repeat="conferences in userctrl.user.conferences">
+				<div class="alert alert-dismissible alert-success" ng-repeat="conferences in userctrl.user.conferences">
 					<i class="fa fa-tag" aria-hidden="true" style="margin:0 5px"></i><strong>{{conferences}}</strong>
 				</div>
-				<div class="alert alert-dismissible alert-info slideInRight animated" ng-repeat="seminar in userctrl.user.seminar">
+				<div class="alert alert-dismissible alert-info" ng-repeat="seminar in userctrl.user.seminar">
 					<i class="fa fa-tag" aria-hidden="true" style="margin:0 5px"></i><strong>{{seminar}}</strong>
 				</div>
             </div>

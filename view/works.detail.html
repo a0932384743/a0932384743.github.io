@@ -1,2 +1,14 @@
-{{JSON.parse($state)}}
-<div>=======================================</div>
+<div class="bs-docs-section">
+	<h2 class="page-header">
+		<strong>{{worksctrl.works[id].title}}</strong>
+	</h2>
+	<p ng-repeat="image in worksctrl.works[id].image track by $index">
+		<img class="img-responsive" ng-src="{{image}}" ng-class="{'pull-right': ($index%2 === 1 && image !==''),'pull-left': ($index%2 === 0 && image !=='')}"style="margin:10px" ng-if="image!==''"/>
+		{{worksctrl.works[id].content[$index]}}
+	</p>
+</div>
+<div class="text-right" style="clear:both">
+	<a class="btn btn-primary" ng-href="#/works" ng-click="worksctrl.showAll = true">
+		{{labctrl.back | i18n}}
+	</a>
+</div>

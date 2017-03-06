@@ -58,8 +58,8 @@
 								~ 
 								<label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
 								<button class="btn btn-primary btn-xs pull-right" ng-click="employment.show = !employment.show">
-									<label ng-if="!employment.show">{{labctrl.supervisor | i18n}}</label>
-									<label ng-if="employment.show">{{labctrl.content | i18n}}</label>
+									<span ng-if="!employment.show">{{labctrl.supervisor | i18n}}</span>
+									<span ng-if="employment.show">{{labctrl.content | i18n}}</span>
 								</button>
 							</p>
 						</div>
