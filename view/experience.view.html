@@ -45,13 +45,20 @@
 								<p>{{employment.content}}<p>
 							</div>
 							<div class="alert alert-dismissible" ng-if="employment.show" ng-class="{'animated lightSpeedIn' : employment.show , 'animated lightSpeedOut' : !employment.show}">
-								<div>
-									<img class="pull-left img-responsive img-circle" ng-src="{{employment.supervisor.photo}}">
-									<strong>{{employment.supervisor.name}}</strong>
+								<div class="row">
+									<div class="col-xs-3">
+										<img class="img-circle"  ng-src="{{employment.supervisor.photo}}">
+									</div>
+									<div class="col-xs-9">
+										<div>
+											<strong>{{employment.supervisor.name}}</strong>
+											<small>{{employment.supervisor.jobtitle}}</small>
+										</div>
+										<div><a ng-href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</a></div>
+										<div><a ng-href="mailto:{{employment.supervisor.mail}}">{{employment.supervisor.mail}}</a></div>
+									</div>
 								</div>
-								<p>{{employment.supervisor.jobtitle}}</p>
-								<div><a ng-href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</a></div>
-								<div><a ng-href="mailto:{{employment.supervisor.mail}}">{{employment.supervisor.mail}}</a></div>
+								
 							</div>
 							<p>
 								<label>{{employment.starttime.format('YYYY-MM-DD')}} </label>
