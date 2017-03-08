@@ -2,7 +2,7 @@
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.education | i18n}}</strong>
+				<strong ng-cloak>{{labctrl.education | i18n}}</strong>
 			</h2>
 			<ul class="timeline">
 				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="education in userctrl.user.education">
@@ -11,14 +11,14 @@
 					</div>
 					<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'animated flipOutX' : education.active , 'animated flipInX': !education.active}">
 							<div class="timeline-heading">
-								<h4 class="timeline-title">
+								<h4 class="timeline-title" ng-cloak>
 									{{education.school}}
 								</h4>
-								<p>{{education.subject}}</p>
+								<p ng-cloak>{{education.subject}}</p>
 							</div>
 						<div class="timeline-body">
-							<span>{{education.endtime.format('YYYY-MM-DD')}}</span>
-							<span>{{education.status}}</span> 
+							<span ng-cloak>{{education.endtime.format('YYYY-MM-DD')}}</span>
+							<span ng-cloak>{{education.status}}</span> 
 						</div>
 					</div>
 				</li>
@@ -28,7 +28,7 @@
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.workExperience | i18n}}</strong>
+				<strong ng-cloak>{{labctrl.workExperience | i18n}}</strong>
 			</h2>
 			<ul class="timeline">
 				<li ng-class="{ 'timeline-inverted' : $index%2  === 0 , 'timeline-inverted' : $index%2  === 1}" ng-repeat="employment in userctrl.user.employment">
@@ -37,12 +37,12 @@
 					</div>
 					<div class="timeline-panel {{labctrl.colors[ $index%5]}}" ng-class="{'animated flipInX' : !employment.active , 'animated flipOutX': employment.active}">
 						<div class="timeline-heading">
-							<h4 class="timeline-title">{{employment.employer}}</h4>
-							<p>{{employment.jobtitle}}</p>
+							<h4 class="timeline-title" ng-cloak>{{employment.employer}}</h4>
+							<p ng-cloak>{{employment.jobtitle}}</p>
 						</div>
 						<div class="timeline-body">
 							<div class="alert alert-dismissible" ng-if="!employment.show" ng-class="{'animated lightSpeedIn' : !employment.show , 'animated lightSpeedOut' : employment.show}">
-								<p>{{employment.content}}<p>
+								<p ng-cloak>{{employment.content}}<p>
 							</div>
 							<div class="alert alert-dismissible" ng-if="employment.show" ng-class="{'animated lightSpeedIn' : employment.show , 'animated lightSpeedOut' : !employment.show}">
 								<div class="row">
@@ -51,11 +51,11 @@
 									</div>
 									<div class="col-xs-9">
 										<div>
-											<strong>{{employment.supervisor.name}}</strong>
-											<small>{{employment.supervisor.jobtitle}}</small>
+											<strong ng-cloak>{{employment.supervisor.name}}</strong>
+											<small ng-cloak>{{employment.supervisor.jobtitle}}</small>
 										</div>
-										<div><a ng-href="tel:{{employment.supervisor.telphone}}">{{employment.supervisor.telphone}}</a></div>
-										<div><a ng-href="mailto:{{employment.supervisor.mail}}">{{employment.supervisor.mail}}</a></div>
+										<div><a ng-href="tel:{{employment.supervisor.telphone}}" ng-cloak>{{employment.supervisor.telphone}}</a></div>
+										<div><a ng-href="mailto:{{employment.supervisor.mail}}" ng-cloak>{{employment.supervisor.mail}}</a></div>
 									</div>
 								</div>
 								
@@ -65,8 +65,8 @@
 								~ 
 								<label>{{employment.endtime.format('YYYY-MM-DD')}} </label>
 								<button class="btn btn-primary btn-xs pull-right" ng-click="employment.show = !employment.show">
-									<span ng-if="!employment.show">{{labctrl.supervisor | i18n}}</span>
-									<span ng-if="employment.show">{{labctrl.content | i18n}}</span>
+									<span ng-if="!employment.show" ng-cloak>{{labctrl.supervisor | i18n}}</span>
+									<span ng-if="employment.show" ng-cloak>{{labctrl.content | i18n}}</span>
 								</button>
 							</p>
 						</div>

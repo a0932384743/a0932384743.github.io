@@ -2,7 +2,7 @@
 	<div class="col-xs-12"  ng-if="worksctrl.showAll">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.works | i18n}}</strong>
+				<strong ng-cloak>{{labctrl.works | i18n}}</strong>
 			</h2>
 			<div class="blog_block" ng-repeat="works in worksctrl.works">
 				<div class="row">
@@ -13,12 +13,12 @@
 					</div>
 					<div class="col-md-8">
 						<h4 class="text-info text-uppercase">
-							<strong>{{works.title}}</strong>
+							<strong ng-cloak>{{works.title}}</strong>
 						</h4>
-						<p>
+						<p ng-cloak>
 							{{works.abstracts}}
 						</p>
-						<a class="btn btn-primary text-uppercase" ng-href="#/works/detail/{{$index}}" ng-click="worksctrl.showAll = false">{{labctrl.readmore | i18n}}</a>
+						<a class="btn btn-primary text-uppercase" ng-href="#/works/detail/{{$index}}" ng-click="worksctrl.showAll = false" ng-cloak>{{labctrl.readmore | i18n}}</a>
 					</div>
 				</div>
 			</div>

@@ -2,9 +2,9 @@
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.introduce | i18n}}</strong>
+				<strong ng-cloak>{{labctrl.introduce | i18n}}</strong>
 			</h2>
-			<p class="lead rubberBand animated" style="line-height:1.5em">
+			<p class="lead rubberBand animated" style="line-height:1.5em" ng-cloak>
 				{{ userctrl.user.introduce }}
 			</p>
 		</div><!-- /.blog-post -->
@@ -12,7 +12,7 @@
 	<div class="col-xs-12">
 		<div class="bs-docs-section">
 			<h2 class="page-header">
-				<strong>{{labctrl.personalInfo | i18n}}</strong>
+				<strong ng-cloak>{{labctrl.personalInfo | i18n}}</strong>
 			</h2>
 			<div class="row">
 				<div class="col-xs-12 col-sm-4 col-md-3">
@@ -24,66 +24,66 @@
 							<tbody>
 								<tr>
 									<th>
-										<span>{{ labctrl.name | i18n }}</span>
+										<span ng-cloak>{{ labctrl.name | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td>{{ userctrl.user.username }}</td>
+									<td><span ng-cloak>{{ userctrl.user.username }}</span></td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.sex | i18n }}</span>
+										<span ng-cloak>{{ labctrl.sex | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td>{{ userctrl.user.sex }}</td>
+									<td><span ng-cloak>{{ userctrl.user.sex }}</span></td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.birthday | i18n }}</span>
+										<span ng-cloak>{{ labctrl.birthday | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td>{{ userctrl.user.birth.format('YYYY-MM-DD') }}</td>
+									<td><span ng-cloak>{{ userctrl.user.birth.format('YYYY-MM-DD') }}</span></td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.height | i18n }}</span>
+										<span ng-cloak>{{ labctrl.height | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td>{{ userctrl.user.height }} cm</td>
+									<td><span ng-cloak>{{ userctrl.user.height }}</span> cm</td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.weight | i18n }}</span>
+										<span ng-cloak>{{ labctrl.weight | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td>{{ userctrl.user.weight }} kg</td>
+									<td><span ng-cloak>{{ userctrl.user.weight }}</span> kg</td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.email | i18n }}</span>
+										<span ng-cloak>{{ labctrl.email | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td><a href="mailto:{{userctrl.user.mail}}">{{ userctrl.user.mail }}</a></td>
+									<td><a href="mailto:{{userctrl.user.mail}}" ng-cloak>{{ userctrl.user.mail }}</a></td>
 								</tr>
 								<tr>
 									<th>
 										<span>{{ labctrl.github}}</span>
 									</th>
 									<td>:</td>
-									<td><a ng-href="{{userctrl.user.github}}" target="_blank">{{ userctrl.user.github }}</a></td>
+									<td><a ng-href="{{userctrl.user.github}}" target="_blank" ng-cloak>{{ userctrl.user.github }}</a></td>
 								</tr>
 								<tr>
 									<th>
-										<spa>{{ labctrl.telphone | i18n }}</span>
+										<span ng-cloak>{{ labctrl.telphone | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td><a ng-href="tel:{{userctrl.user.telphone}}">{{ userctrl.user.telphone }}</a></td>
+									<td><a ng-href="tel:{{userctrl.user.telphone}}" ng-cloak>{{ userctrl.user.telphone }}</a></td>
 								</tr>
 								<tr>
 									<th>
-										<span>{{ labctrl.cellphone | i18n }}</span>
+										<span ng-cloak>{{ labctrl.cellphone | i18n }}</span>
 									</th>
 									<td>:</td>
-									<td><a ng-href="tel:{{userctrl.user.cellphone}}">{{ userctrl.user.cellphone }}</a></td>
+									<td><a ng-href="tel:{{userctrl.user.cellphone}}" ng-cloak>{{ userctrl.user.cellphone }}</a></td>
 								</tr>
 							</tbody>
 						</table>

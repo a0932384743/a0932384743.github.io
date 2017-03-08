@@ -1,7 +1,7 @@
 <div ng-controller="imageCtrl as imgctrl">
     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-       <div><label class="h4 text-info">{{slide.text | i18n }}</label></div>
+       <div><label class="h4 text-info" ng-cloak>{{slide.text | i18n }}</label></div>
 	   <img ng-src="{{slide.image}}" style="margin:auto;width:80%">
        <div class="carousel-caption"></div>
       </div>
