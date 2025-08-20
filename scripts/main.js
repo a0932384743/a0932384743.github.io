@@ -5,14 +5,9 @@ angular.module("myapp", ["ui.router", "i18n", "ui.bootstrap", "ngAnimate", "ngSa
             function a(a) {
                 var e = {
                         photo: "../../images/user.png",
-                        birth: moment("1990-01-07"),
                         age: (new Date).getYear() - 90,
-                        height: 165,
-                        weight: 50,
                         mail: "a0932384743@gmail.com",
                         github: "https://a0932384743.github.io",
-                        telphone: "04-8363853",
-                        cellphone: "0978711330",
                         computerskill: {
                             programminglanguage: [{ name: "Basic/C/C#", years: "2", value: "60" }, { name: "Matlab", years: "2", value: "60" }, { name: "HTML/CSS/Javascript", years: "6", value: "90" }, { name: "JAVA", years: "4", value: "70" }],
                             officeskill: {
