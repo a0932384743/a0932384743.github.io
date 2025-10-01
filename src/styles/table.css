@@ -1,0 +1,123 @@
+/* Table 元件樣式 */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.custom-table th {
+    background: #f5f8fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 16px 8px 8px 8px;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.custom-table th span {
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-left: 4px;
+}
+
+.custom-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.custom-table tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+.custom-table input[type="text"] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.custom-table input[type="text"]:focus {
+    border-color: #a0c4ff;
+    background: #fff;
+}
+
+/* 分頁區塊 */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    padding: 16px 0 12px 0;
+    font-size: 15px;
+    color: #888;
+}
+
+.pagination button {
+    border: none;
+    background: #fff;
+    color: #333;
+    font-size: 15px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pagination button:disabled {
+    background: #e5e7eb;
+    color: #aaa;
+    cursor: default;
+}
+
+.pagination button:not(:disabled):hover {
+    background: #e0e7ff;
+}
+
+.pagination select {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: #f5f8fa;
+    font-size: 15px;
+}
+
+/* 滾動條美化 */
+.custom-table tbody {
+    overflow-y: auto;
+}
+
+.custom-table::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: #f5f8fa;
+    border-radius: 8px;
+}
+
+.custom-table::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 8px;
+}
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<%= htmlWebpackPlugin.options.head %>
+<body>
+<%= htmlWebpackPlugin.options.header %>
+<main class="app-main">
+    <%= htmlWebpackPlugin.options.aside %>
+    <div class="app-main__inner">
+        <aside class="app-side" style="display: none;"></aside>
+        <div class="container">
+            <div style="display: flex;gap: 10px;margin-bottom: 15px;padding-left: 25px; padding-right: 25px;">
+                <button type="button" id="SignPdf">簽章</button>
+                <button type="button" id="GoBack">上一頁</button>
+            </div>
+            <p style="color: rgba(255,0,0,0.89)">「請確認以下的文件是否要被簽署」</p>
+            <div class="pdf-viewer" style="text-align: center;">
+                <canvas id="pdfCanvas" style="margin: auto"></canvas>
+            </div>
+        </div>
+        <%= htmlWebpackPlugin.options.footer %>
+    </div>
+</main>
+</body>
+</html>

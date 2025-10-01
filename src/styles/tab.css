@@ -1,0 +1,66 @@
+/* 分頁選項 */
+.tabs {
+    display: flex;
+}
+
+.tab {
+    outline: none;
+    border: none;
+    width: 145px;
+    height: 35px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    background: #F4F4F5;
+    color: #B3B3B3;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    color: #6155F5;
+    border-top: 2px solid #6155F5;
+    background: #fff;
+}
+
+.tabs-container {
+
+}
+
+/* fading 效果 */
+.tabs-container > * {
+    display: none;
+    opacity: 0;
+    animation: fadeOut 0.5s ease-out;
+}
+
+.tabs-container > .active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        display: none;
+    }
+    to {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        position: absolute;
+        opacity: 1;
+        display: block;
+    }
+    to {
+        position: absolute;
+        opacity: 0;
+        display: none;
+    }
+}
+

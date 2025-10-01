@@ -1,0 +1,235 @@
+:root {
+    --adp-day-name-color: #1D2530;
+}
+
+* {
+    --adp-day-name-color: #1D2530;
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', Noto Sans TC, sans-serif;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header 樣式 */
+.app-header {
+    width: 100%;
+    height: 55px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-size: 100% 100% !important;
+    background-position: left !important;
+}
+
+.app-header .logo {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    background: #1D2530;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 32px;
+    margin-right: auto;
+}
+
+.app-header h6 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.app-header .logo img {
+    width: 146px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.app-header .tool {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.app-header .tool button {
+    outline: none;
+    background: transparent;
+    border: none;
+}
+
+.app-header .tool i {
+    color: #fff;
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+}
+
+.app-header .tool a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sider 樣式 */
+.app-side {
+    width: 230px;
+    height: 100vh;
+    background: #374151;
+    padding: 60px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 998;
+    overflow: auto;
+    transition: width 0.3s;
+    position: relative;
+}
+
+.app-side.collapsed {
+    width: 0;
+    overflow: hidden;
+}
+
+.app-side button {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 15px;
+    text-align: left;
+    color: white;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.app-side.collapsed button {
+    animation: animate-fixed 0.8s forwards;
+    position: fixed;
+    left: 0;
+    width: fit-content;
+    background: rgba(55, 65, 81, 0.9);
+}
+
+@keyframes animate-fixed {
+    from {
+        position: initial;
+    }
+    to {
+        position: fixed;
+    }
+}
+
+.app-side nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white
+}
+
+.app-side nav ul li {
+    padding: 16px 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.app-side nav ul li:hover, .app-side nav ul li.active {
+    background: #6155F5;
+}
+
+.app-side nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+}
+
+.app-main {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    width: 100vw;
+    height: 100vh;
+    transition: grid-template-columns 0.3s;
+}
+
+.app-main.collapsed {
+    grid-template-columns: 0 1fr;
+}
+
+.app-main > .app-main__inner {
+    overflow: hidden;
+    background: #E5E7EB;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.app-main__inner > .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 70px 25px 50px 25px;
+}
+
+/* Breadcrumb 麵包屑樣式 */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #040D19;
+    gap: 8px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.breadcrumb a {
+    color: #040D19;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb a:hover {
+    color: #1D2530;
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #525252;
+}
+
+.app-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: left;
+    color: #1D2530;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #C4CCDB;
+}
+

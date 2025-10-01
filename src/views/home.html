@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<%= htmlWebpackPlugin.options.head %>
+<body>
+<%= htmlWebpackPlugin.options.header %>
+<main class="app-main">
+    <%= htmlWebpackPlugin.options.aside %>
+    <div class="app-main__inner">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/home.html"><img src="assets/img/home-o.svg" alt="home" width="20" height="20"></a>
+            </nav>
+            <div style="display: grid; grid-template-columns: 100%;gap: 16px;width: 100%">
+                <!-- 查詢門號區塊 -->
+                <div class="section-box">
+                    <div class="section-title">查詢門號</div>
+                    <div class="form-row">
+                        <label class="form-label">
+                            查詢期間
+                        </label>
+                        <label class="input-group sm" style="max-width: 200px">
+                            <input id="startDate" type="text" class="date-input" placeholder="請選擇開始日期">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        </label>
+                        <span>至</span>
+                        <label class="input-group sm" style="max-width: 200px">
+                            <input id="endDate" type="text" class="date-input" placeholder="請選擇結束日期">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+                <!-- 查詢結果區塊 -->
+                <div class="section-box">
+                    <div class="section-title">查詢結果</div>
+                    <div class="tabs">
+                        <button class="tab active">放心接</button>
+                        <button class="tab">資料隱碼</button>
+                        <button class="tab">電子簽章</button>
+                    </div>
+                    <div class="tabs-container">
+                        <div class="active">
+                            <div class="btn-group" style="margin: 16px 0">
+                                <button type="button" class="btn active">話務紀錄</button>
+                                <button type="button" class="btn">簡訊紀錄</button>
+                            </div>
+                            <div class="table-container">
+                                <div id="package-table"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="table-container" style="margin-top: 16px">
+                                <div id="data-table"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="upload-area">
+                                <input type="file" id="FileInput" style="display:none" multiple accept=".xlsx,.csv">
+                                <button id="FileBtn" class="upload-btn">上傳單據檔案</button>
+                                <button id="SignBtn" class="upload-btn" disabled>批次簽名</button>
+                                <span class="file-tip"><span style="color:#e53935">*</span>檔案格式：.xlsx或.csv</span>
+                            </div>
+                            <div class="table-container">
+                                <div id="excel-table"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= htmlWebpackPlugin.options.footer %>
+    </div>
+</main>
+</body>
+</html>

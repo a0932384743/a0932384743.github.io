@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<%= htmlWebpackPlugin.options.head %>
+<body>
+<%= htmlWebpackPlugin.options.header %>
+<main class="app-main">
+    <%= htmlWebpackPlugin.options.aside %>
+    <div class="app-main__inner">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/home.html"><img src="assets/img/home-o.svg" alt="home" width="20" height="20"></a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <span>帳號設定</span>
+            </nav>
+        </div>
+        <%= htmlWebpackPlugin.options.footer %>
+    </div>
+</main>
+</body>
+</html>

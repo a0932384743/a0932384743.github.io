@@ -1,0 +1,110 @@
+.login-btn {
+    width: 100%;
+    background: #2563EB;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #1945a5;
+}
+
+button.sm {
+    padding: 8px 16px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+/* 上傳按鈕 */
+.upload-btn {
+    background: #3575f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.upload-btn:hover {
+    background: #1945a5;
+}
+
+.upload-btn:before {
+    content: '+';
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+/* 檔案格式提示 */
+.file-tip {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.btn-group {
+    display: flex;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    width: fit-content;
+    background: #fff;
+}
+
+.btn {
+    flex: 1;
+    padding: 6px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s, color 0.2s, opacity 0.5s;
+}
+
+.btn:active {
+    opacity: 0.8;
+}
+
+.btn.active {
+    background: #6366f1;
+    color: #fff;
+}
+
+.btn:not(.active) {
+    background: #fff;
+    color: #6b7280;
+}
+
+button[disabled] {
+    background: lightgrey !important;
+    cursor: not-allowed !important;
+}
+
+.drop-zone {
+    border: 2px dashed lightgrey;
+    border-radius: 6px;
+    padding: 32px 0;
+    text-align: center;
+    background: #ededed;
+    margin-bottom: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.drop-zone.dragover {
+    border-color: lightgrey;
+    background: rgba(237, 237, 237, 0.8);
+}
